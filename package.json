@@ -5,8 +5,8 @@
   "main": "server.ts",
   "scripts": {
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored tsconfig.build.json",
-    "start": "npm run build && cross-env NODE_ENV=production node dist/main/server.js",
-    "dev": "cross-env NODE_ENV=development tsx watch ./src/main/server.ts"
+    "start": "npm run build && cross-env NODE_ENV=production node --env-file .env dist/main/server.js",
+    "dev": "cross-env NODE_ENV=development tsx watch --env-file=.env.development ./src/main/server.ts"
   },
   "keywords": [],
   "author": "",
